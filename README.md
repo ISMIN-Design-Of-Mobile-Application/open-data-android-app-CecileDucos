@@ -1,9 +1,9 @@
 
-## [APP NAME]  
+## [Rescencement établissement scolaires français]  
   
 Codé par :   
- - [prenom1] [nom1]   
- - [prenom2] [nom2]   
+ - [Cécile] [DUCOS]   
+ - [Hossein] [HASHEMI]   
 
 ## Description  
   
