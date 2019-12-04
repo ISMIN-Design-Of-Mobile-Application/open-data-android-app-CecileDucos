@@ -25,10 +25,11 @@
 
             <TextView
                 android:id="@+id/SitetextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
-                android:layout_marginTop="540dp"
+                android:layout_marginTop="740dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="360dp"
+                android:layout_marginTop="440dp"
                 android:text="Adresse : "
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="340dp"
                 android:text="Type d'établissement : "
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="420dp"
+                android:layout_marginTop="540dp"
                 android:text="Ville :"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -67,37 +68,41 @@
 
             <TextView
                 android:id="@+id/VilletextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="65dp"
-                android:layout_marginTop="420dp"
+                android:layout_marginTop="540dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/RegiontextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
-                android:layout_marginTop="480dp"
+                android:layout_marginTop="640dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/AdressetextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="95dp"
-                android:layout_marginTop="360dp"
+                android:layout_marginTop="440dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/NomEcoletextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="190dp"
                 android:layout_marginTop="240dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="540dp"
+                android:layout_marginTop="740dp"
                 android:text="Site internet :"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -118,6 +123,8 @@
                 android:layout_height="176dp"
                 android:layout_marginStart="132dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginEnd="117dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/chapeau_diplome_logo" />
@@ -127,10 +134,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="170dp"
-                android:layout_marginTop="625dp"
+                android:layout_marginTop="840dp"
+                android:layout_marginEnd="153dp"
                 android:layout_marginBottom="24dp"
                 android:text="Retour"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -139,7 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="480dp"
+                android:layout_marginTop="640dp"
                 android:text="Région :"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -147,10 +156,11 @@
 
             <TextView
                 android:id="@+id/TypeTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="180dp"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="340dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

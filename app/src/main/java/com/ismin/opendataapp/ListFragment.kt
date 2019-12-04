@@ -72,9 +72,10 @@ class ListFragment : Fragment() {
     }
 
     fun detailsElement(position: Int) {
-        Toast.makeText(context, "merci jcccc V2", Toast.LENGTH_LONG).show()
+        //Toast.makeText(context, "merci jcccc V2", Toast.LENGTH_LONG).show()
         var school = schoolList[position]
         val intent =  Intent(context, DetailsActivity::class.java)
+        intent.putExtra("DISPLAY_DETAILS_SCHOOL_KEY", school)
         this.startActivity(intent)
     }
 
