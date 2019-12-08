@@ -3,6 +3,7 @@ package com.ismin.opendataapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -17,6 +18,7 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
+
         val editName = findViewById<TextView>(R.id.NomEcoletextView)
         val editType = findViewById<TextView>(R.id.TypeTextView)
         val editAdresse = findViewById<TextView>(R.id.AdressetextView)
@@ -33,6 +35,11 @@ class DetailsActivity : AppCompatActivity() {
         editVille.text = school.ville
         editRegion.text = school.region
         editSite.text = school.SiteInternet
+        val actionBar = supportActionBar
+        actionBar!!.title = school.name
+        actionBar.setDisplayHomeAsUpEnabled(true)
+        actionBar.setDisplayHomeAsUpEnabled(true)
+
         if (school.typeEtablissement == "Ecole Ingénieur" || school.typeEtablissement == "Ecole habilitée à délivrer un diplôme d'ingénieur" || school.typeEtablissement == "Institut national polytechnique") {
             editimg.setImageResource(R.drawable.ic_chip)
         }
@@ -52,5 +59,10 @@ class DetailsActivity : AppCompatActivity() {
         btnreturn.setOnClickListener{
             finish()
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
