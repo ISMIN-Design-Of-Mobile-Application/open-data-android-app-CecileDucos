@@ -18,7 +18,7 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
-
+        //kikou
         val editName = findViewById<TextView>(R.id.NomEcoletextView)
         val editType = findViewById<TextView>(R.id.TypeTextView)
         val editAdresse = findViewById<TextView>(R.id.AdressetextView)
