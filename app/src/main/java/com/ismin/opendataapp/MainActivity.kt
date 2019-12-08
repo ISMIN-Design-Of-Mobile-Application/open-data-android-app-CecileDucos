@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListener, ListFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener {
     private val schoolList: ArrayList<School> =
-        arrayListOf(School("Mines St-Etienne Cycle ISMIN", "bobobobobobobobobobobosignéPierrre", "Ecole Ingénieur", "https://www.mines-stetienne.fr/formation/ismin/",
+        arrayListOf(School("Mines St-Etienne Cycle ISMIN", "Gardanne", "Ecole Ingénieur", "https://www.mines-stetienne.fr/formation/ismin/",
             "PACA", "879 route de Mimet",43.445038, 5.479467), School("emlyon business school", "Ecully",
             "Université", "https://www.em-lyon.com/fr",
             "Rhône-Alpes", "23 Avenue Guy de Collongue",45.786430, 4.764251))

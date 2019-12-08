@@ -26,7 +26,6 @@ class DetailsActivity : AppCompatActivity() {
         val editRegion = findViewById<TextView>(R.id.RegiontextView)
         val editSite = findViewById<TextView>(R.id.SitetextView)
         val editimg = findViewById<ImageView>(R.id.imageSchoolView)
-        val btnreturn = findViewById<Button>(R.id.BackButton)
         val school: School = intent.getSerializableExtra(DISPLAY_DETAILS_SCHOOL_KEY) as School
         //Toast.makeText(this, school.name, Toast.LENGTH_LONG).show()
         editName.text = school.name
@@ -55,9 +54,6 @@ class DetailsActivity : AppCompatActivity() {
 
         else if (school.typeEtablissement == "Etablissement supérieur d'architecture") {
             editimg.setImageResource(R.drawable.ic_architecture_draw_of_a_house_on_a_paper)
-        }
-        btnreturn.setOnClickListener{
-            finish()
         }
     }
 
