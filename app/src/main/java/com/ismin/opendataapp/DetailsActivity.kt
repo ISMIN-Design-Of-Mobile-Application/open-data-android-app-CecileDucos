@@ -3,10 +3,12 @@ package com.ismin.opendataapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 
 
 const val DISPLAY_DETAILS_SCHOOL_KEY = "DISPLAY_DETAILS_SCHOOL_KEY"
@@ -17,6 +19,8 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
+        var actionBar: android.app.ActionBar? = getActionBar()
+        actionBar?.setDisplayHomeAsUpEnabled(true)
         val editName = findViewById<TextView>(R.id.NomEcoletextView)
         val editType = findViewById<TextView>(R.id.TypeTextView)
         val editAdresse = findViewById<TextView>(R.id.AdressetextView)
@@ -52,5 +56,11 @@ class DetailsActivity : AppCompatActivity() {
         btnreturn.setOnClickListener{
             finish()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val myIntent = Intent(applicationContext, MainActivity::class.java)
+        startActivityForResult(myIntent, 0)
+        return true
     }
 }
