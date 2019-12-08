@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListe
     lateinit var recyclerView: RecyclerView
     //private lateinit var schoolService:
 
+    public fun getSchoolList(): ArrayList<School> {
+        return schoolList
+    }
 
     override fun onMap() {
 
@@ -35,7 +38,7 @@ class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListe
 
     }
 
-    private fun transactionList() {
+    /*private fun transactionList() {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         val fragment = ListFragment()
 
@@ -64,7 +67,7 @@ class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListe
         fragmentTransaction.replace(R.id.Fragment, fragment)
         fragmentTransaction.commit()
 
-    }
+    }*/
 
     /*override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,6 +100,8 @@ class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListe
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
+        val fragment = ListFragment()
+        fragment.afficherList(schoolList)
 
     }
 

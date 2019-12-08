@@ -9,14 +9,26 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.ismin.opendataapp.ListFragment
+import com.ismin.opendataapp.MainActivity
 import com.ismin.opendataapp.R
-import kotlinx.android.synthetic.main.activity_main.view.*
+import com.ismin.opendataapp.School
 import kotlinx.android.synthetic.main.fragment_list.*
+
 
 /**
  * A placeholder fragment containing a simple view.
  */
-class PlaceholderFragment : Fragment() {
+class PlaceholderFragment : Fragment(), ListFragment.OnFragmentInteractionListener {
+    private val schoolList: ArrayList<School> =
+        arrayListOf(
+            School("Mines St-Etienne Cycle ISMIN", "bobobobobobobobobobobosignéPierrre", "Ecole Ingénieur", "https://www.mines-stetienne.fr/formation/ismin/",
+                "PACA", "879 route de Mimet",43.445038, 5.479467), School("emlyon business school", "Ecully",
+                "Université", "https://www.em-lyon.com/fr",
+                "Rhône-Alpes", "23 Avenue Guy de Collongue",45.786430, 4.764251)
+        )
+    override fun onList() {
+
+    }
 
     private lateinit var pageViewModel: PageViewModel
 
@@ -35,7 +47,11 @@ class PlaceholderFragment : Fragment() {
         val nbPage = arguments?.getInt(ARG_SECTION_NUMBER)
 
         if (nbPage == 1) {
+            val fragment = ListFragment()
+            fragment.afficherList(schoolList)
             root = inflater.inflate(R.layout.fragment_list, container, false)
+            System.out.println("page 1")
+
         }
 
         else if (nbPage == 2 ) {
