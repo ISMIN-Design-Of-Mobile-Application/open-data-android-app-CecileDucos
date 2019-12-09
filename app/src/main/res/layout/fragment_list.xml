@@ -29,13 +29,13 @@
         android:layout_height="143dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="116dp"
-        android:scrollbarTrackVertical="@drawable/amphi"
+        android:scrollbarTrackVertical="@drawable/school_logo"
         android:src="@drawable/school_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/amphi"
+        app:srcCompat="@drawable/school_logo"
         tools:srcCompat="@drawable/school_logo" />
 
     <TextView
