@@ -39,20 +39,20 @@ class DetailsActivity : AppCompatActivity() {
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayHomeAsUpEnabled(true)
 
-        if (school.typeEtablissement == "Ecole Ingénieur" || school.typeEtablissement == "Ecole habilitée à délivrer un diplôme d'ingénieur" || school.typeEtablissement == "Institut national polytechnique") {
+        if (school.typeEtablissement == "École Ingénieur" || school.typeEtablissement == "École habilitée à délivrer un diplôme d'ingénieur" || school.typeEtablissement == "Institut national polytechnique") {
             editimg.setImageResource(R.drawable.ic_chip)
         }
         else if (school.typeEtablissement == "Université") {
             editimg.setImageResource(R.drawable.ic_university)
         }
-        else if (school.typeEtablissement == "Ecole de formation artistique") {
+        else if (school.typeEtablissement == "École de formation artistique") {
             editimg.setImageResource(R.drawable.ic_palette)
         }
-        else if (school.typeEtablissement == "Ecole de commerce et de management") {
+        else if (school.typeEtablissement == "École de commerce et de management") {
             editimg.setImageResource(R.drawable.ic_hand)
         }
 
-        else if (school.typeEtablissement == "Etablissement supérieur d'architecture") {
+        else if (school.typeEtablissement == "Établissement supérieur d'architecture") {
             editimg.setImageResource(R.drawable.ic_architecture_draw_of_a_house_on_a_paper)
         }
     }
