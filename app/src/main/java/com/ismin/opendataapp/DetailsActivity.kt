@@ -19,8 +19,7 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
-        var actionBar: android.app.ActionBar? = getActionBar()
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+
         val editName = findViewById<TextView>(R.id.NomEcoletextView)
         val editType = findViewById<TextView>(R.id.TypeTextView)
         val editAdresse = findViewById<TextView>(R.id.AdressetextView)
@@ -28,7 +27,6 @@ class DetailsActivity : AppCompatActivity() {
         val editRegion = findViewById<TextView>(R.id.RegiontextView)
         val editSite = findViewById<TextView>(R.id.SitetextView)
         val editimg = findViewById<ImageView>(R.id.imageSchoolView)
-        val btnreturn = findViewById<Button>(R.id.BackButton)
         val school: School = intent.getSerializableExtra(DISPLAY_DETAILS_SCHOOL_KEY) as School
         //Toast.makeText(this, school.name, Toast.LENGTH_LONG).show()
         editName.text = school.name
@@ -37,30 +35,33 @@ class DetailsActivity : AppCompatActivity() {
         editVille.text = school.ville
         editRegion.text = school.region
         editSite.text = school.SiteInternet
-        if (school.typeEtablissement == "Ecole Ingénieur" || school.typeEtablissement == "Ecole habilitée à délivrer un diplôme d'ingénieur" || school.typeEtablissement == "Institut national polytechnique") {
+
+        val actionBar = supportActionBar
+        actionBar!!.title = school.name
+        actionBar.setDisplayHomeAsUpEnabled(true)
+        actionBar.setDisplayHomeAsUpEnabled(true)
+        if (school.typeEtablissement == "École Ingénieur" || school.typeEtablissement == "École habilitée à délivrer un diplôme d'ingénieur" || school.typeEtablissement == "Institut national polytechnique") {
             editimg.setImageResource(R.drawable.ic_chip)
         }
         else if (school.typeEtablissement == "Université") {
             editimg.setImageResource(R.drawable.ic_university)
         }
-        else if (school.typeEtablissement == "Ecole de formation artistique") {
+        else if (school.typeEtablissement == "École de formation artistique") {
             editimg.setImageResource(R.drawable.ic_palette)
         }
-        else if (school.typeEtablissement == "Ecole de commerce et de management") {
+        else if (school.typeEtablissement == "École de commerce et de management") {
             editimg.setImageResource(R.drawable.ic_hand)
         }
 
-        else if (school.typeEtablissement == "Etablissement supérieur d'architecture") {
+        else if (school.typeEtablissement == "Établissement supérieur d'architecture") {
             editimg.setImageResource(R.drawable.ic_architecture_draw_of_a_house_on_a_paper)
         }
-        btnreturn.setOnClickListener{
-            finish()
-        }
+
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val myIntent = Intent(applicationContext, MainActivity::class.java)
-        startActivityForResult(myIntent, 0)
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
         return true
     }
 }

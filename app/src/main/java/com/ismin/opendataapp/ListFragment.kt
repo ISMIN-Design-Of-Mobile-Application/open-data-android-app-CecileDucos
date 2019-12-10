@@ -30,6 +30,12 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        /*val listSchool = arguments!!.getSerializable("ENVOIE_DATA") as ArrayList<School>
+        this.schoolList.clear()
+        this.schoolList.addAll(listSchool)
+        adapter.notifyDataSetChanged()*/
+        //var textTest : String? = arguments!!.getString("TEST").toString()
+        //Toast.makeText(context, textTest, Toast.LENGTH_LONG).show()
         val rootView = inflater.inflate(R.layout.fragment_list, container, false)
         recyclerView = rootView.findViewById(R.id.schoolList)
         recyclerView.adapter = adapter

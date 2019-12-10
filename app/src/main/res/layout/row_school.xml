@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/imageBottle"
-        android:layout_width="82dp"
-        android:layout_height="89dp"
+        android:layout_width="78dp"
+        android:layout_height="70dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/chapeau_diplome_logo" />
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageBottle"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,11 +31,12 @@
         android:id="@+id/textSchoolCity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="316dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:textSize="14sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageBottle"
         app:layout_constraintTop_toBottomOf="@+id/textSchoolName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

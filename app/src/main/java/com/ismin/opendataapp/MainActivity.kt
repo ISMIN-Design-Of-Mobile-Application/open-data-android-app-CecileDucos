@@ -1,5 +1,6 @@
 package com.ismin.opendataapp
 
+import android.icu.text.IDNA
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -12,15 +13,20 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.ismin.opendataapp.ui.main.SectionsPagerAdapter
+import kotlinx.android.synthetic.main.activity_main2.*
 
 class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListener, ListFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener {
     private val schoolList: ArrayList<School> =
-        arrayListOf(School("Mines St-Etienne Cycle ISMIN", "bobobobobobobobobobobosignéPierrre", "Ecole Ingénieur", "https://www.mines-stetienne.fr/formation/ismin/",
+        arrayListOf(School("Mines St-Etienne Cycle ISMIN", "Gardanne", "Ecole Ingénieur", "https://www.mines-stetienne.fr/formation/ismin/",
             "PACA", "879 route de Mimet",43.445038, 5.479467), School("emlyon business school", "Ecully",
             "Université", "https://www.em-lyon.com/fr",
             "Rhône-Alpes", "23 Avenue Guy de Collongue",45.786430, 4.764251))
     lateinit var recyclerView: RecyclerView
     //private lateinit var schoolService:
+    private lateinit var mainViewPager: ViewPager
+    val fragmentList = ListFragment()
+    val fragmentMap = MapFragment()
+    val fragmentInfo = InfoFragment()
 
     public fun getSchoolList(): ArrayList<School> {
         return schoolList
@@ -92,16 +98,26 @@ class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        //var toolbar: Toolbar = findViewById()
-        var actionBar: android.app.ActionBar? = getActionBar()
-
-        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        mainViewPager = findViewById(R.id.view_pager)
+        setSupportActionBar(toolbar)
         val viewPager: ViewPager = findViewById(R.id.view_pager)
-        viewPager.adapter = sectionsPagerAdapter
+        val sectionPagerAdapter = SectionPagerAdapter(supportFragmentManager)
+        sectionPagerAdapter.addFragment(fragmentList, "Liste")
+        sectionPagerAdapter.addFragment(fragmentMap, "Carte")
+        sectionPagerAdapter.addFragment(fragmentInfo, "Infos")
+        viewPager.adapter = sectionPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
-        val fragment = ListFragment()
-        fragment.afficherList(schoolList)
+
+        /*//val fragmentTransaction = supportFragmentManager.beginTransaction()
+        val bundle = Bundle()
+        //bundle.putSerializable("ENVOIE_DATA", schoolList)
+        bundle.putString("TEST", "HELLO WORLD")
+
+        fragmentList.arguments = bundle*/
+
+        fragmentList.afficherList(schoolList)
+        fragmentMap.getSchool(schoolList)
 
     }
 

@@ -14,12 +14,15 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.ismin.opendataapp.R
 import com.ismin.opendataapp.School
 
 
-class MapFragment : Fragment(), OnMapReadyCallback {
+class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+
+
     private lateinit var mMap: GoogleMap
     private var listener: OnFragmentInteractionListener? = null
     private var schoolList: ArrayList<School> = ArrayList()
@@ -78,6 +81,14 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         }
         val gardanne = LatLng(43.445038, 5.479467)
         mMap.moveCamera(CameraUpdateFactory.newLatLng(gardanne))
+
+
+
+        mMap.setOnMarkerClickListener() {
+
+
+            false
+        }
     }
 
 
@@ -85,5 +96,9 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         this.schoolList.clear()
         this.schoolList.addAll(listSchool)
 
+    }
+
+    override fun onMarkerClick(p0: Marker?): Boolean {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
