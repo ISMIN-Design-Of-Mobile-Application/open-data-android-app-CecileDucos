@@ -1,6 +1,7 @@
 package com.ismin.opendataapp
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -75,7 +76,8 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
 
             var school = schoolList[i]
             val coordonnees = LatLng(school.latitude, school.longitude)
-            mMap.addMarker(MarkerOptions().position(coordonnees).title(school.name))
+            val marker = mMap.addMarker(MarkerOptions().position(coordonnees).title(school.name))
+            marker.tag = school
 
 
         }
@@ -85,9 +87,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
 
 
         mMap.setOnMarkerClickListener() {
-
-
-            false
+            onMarkerClick(it)
         }
     }
 
@@ -99,6 +99,9 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
     }
 
     override fun onMarkerClick(p0: Marker?): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val intent =  Intent(context, DetailsActivity::class.java)
+        intent.putExtra("DISPLAY_DETAILS_SCHOOL_KEY", p0?.tag as School)
+        this.startActivity(intent)
+        return false
     }
 }
