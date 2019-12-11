@@ -2,7 +2,6 @@ package com.ismin.opendataapp
 
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -46,7 +45,6 @@ class InfoFragment : Fragment() {
     }
 
     interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         fun onInfo()
     }
 

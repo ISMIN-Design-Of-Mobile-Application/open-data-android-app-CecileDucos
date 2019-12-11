@@ -28,7 +28,7 @@ class DetailsActivity : AppCompatActivity() {
         val editSite = findViewById<TextView>(R.id.SitetextView)
         val editimg = findViewById<ImageView>(R.id.imageSchoolView)
         val school: School = intent.getSerializableExtra(DISPLAY_DETAILS_SCHOOL_KEY) as School
-        //Toast.makeText(this, school.name, Toast.LENGTH_LONG).show()
+
         editName.text = school.name
         editType.text = school.typeEtablissement
         editAdresse.text = school.adresse
@@ -36,10 +36,13 @@ class DetailsActivity : AppCompatActivity() {
         editRegion.text = school.region
         editSite.text = school.SiteInternet
 
+        //Flèche retour sur l'activité
         val actionBar = supportActionBar
         actionBar!!.title = school.name
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayHomeAsUpEnabled(true)
+
+
         if (school.typeEtablissement == "École Ingénieur" || school.typeEtablissement == "École habilitée à délivrer un diplôme d'ingénieur" || school.typeEtablissement == "Institut national polytechnique") {
             editimg.setImageResource(R.drawable.ic_chip)
         }

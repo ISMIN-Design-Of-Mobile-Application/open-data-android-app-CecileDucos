@@ -2,14 +2,11 @@ package com.ismin.opendataapp
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -17,8 +14,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import com.ismin.opendataapp.R
-import com.ismin.opendataapp.School
 
 
 class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
@@ -74,7 +69,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
 
         for (i in 0 until schoolList.size) {
 
-            var school = schoolList[i]
+            val school = schoolList[i]
             val coordonnees = LatLng(school.latitude, school.longitude)
             val marker = mMap.addMarker(MarkerOptions().position(coordonnees).title(school.name))
             marker.tag = school

@@ -2,13 +2,11 @@ package com.ismin.opendataapp
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -30,12 +28,6 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        /*val listSchool = arguments!!.getSerializable("ENVOIE_DATA") as ArrayList<School>
-        this.schoolList.clear()
-        this.schoolList.addAll(listSchool)
-        adapter.notifyDataSetChanged()*/
-        //var textTest : String? = arguments!!.getString("TEST").toString()
-        //Toast.makeText(context, textTest, Toast.LENGTH_LONG).show()
         val rootView = inflater.inflate(R.layout.fragment_list, container, false)
         recyclerView = rootView.findViewById(R.id.schoolList)
         recyclerView.adapter = adapter
@@ -48,9 +40,6 @@ class ListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
     }
-
-
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -67,7 +56,6 @@ class ListFragment : Fragment() {
     }
 
     interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         fun onList()
     }
 
@@ -78,8 +66,7 @@ class ListFragment : Fragment() {
     }
 
     fun detailsElement(position: Int) {
-        //Toast.makeText(context, "merci jcccc V2", Toast.LENGTH_LONG).show()
-        var school = schoolList[position]
+        val school = schoolList[position]
         val intent =  Intent(context, DetailsActivity::class.java)
         intent.putExtra("DISPLAY_DETAILS_SCHOOL_KEY", school)
         this.startActivity(intent)
