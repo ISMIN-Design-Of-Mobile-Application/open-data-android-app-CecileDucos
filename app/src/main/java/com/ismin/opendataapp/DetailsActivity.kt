@@ -42,7 +42,7 @@ class DetailsActivity : AppCompatActivity() {
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayHomeAsUpEnabled(true)
 
-
+        //Changement d'image selon le type d'établissement
         if (school.typeEtablissement == "École Ingénieur" || school.typeEtablissement == "École habilitée à délivrer un diplôme d'ingénieur" || school.typeEtablissement == "Institut national polytechnique") {
             editimg.setImageResource(R.drawable.ic_chip)
         }
