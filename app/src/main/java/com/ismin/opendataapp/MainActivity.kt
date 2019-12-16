@@ -115,12 +115,6 @@ class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListe
                     }
                     getSchools()
 
-                    /*if (listFragmentRead) {
-                        transactionList()
-                    }
-                    else if (mapFragmentRead){
-                        transactionMap()
-                    }*/
                     fragmentList.afficherList(schoolList)
                     fragmentMap.getSchool(schoolList)
                 }
