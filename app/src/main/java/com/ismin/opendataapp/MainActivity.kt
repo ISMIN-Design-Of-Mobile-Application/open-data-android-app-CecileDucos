@@ -76,7 +76,6 @@ class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListe
         //Initialisation des valeurs des fragments avec le tableau actuel
         fragmentList.afficherList(schoolList)
         fragmentMap.getSchool(schoolList)
-
     }
 
     //Création du menu avec l'option refresh
