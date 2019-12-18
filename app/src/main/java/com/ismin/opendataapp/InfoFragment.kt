@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 
 
 class InfoFragment : Fragment() {
@@ -25,11 +24,7 @@ class InfoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        /*val editText = "je suis le texte"
-        view?.findViewById<TextView>(R.id.textView2)?.text = editText*/
-        /*val editText = view?.findViewById<TextView>(R.id.textView2)
-        editText?.text = "je suis le texte"*/
+
         return inflater.inflate(R.layout.fragment_info, container, false)
     }
 
