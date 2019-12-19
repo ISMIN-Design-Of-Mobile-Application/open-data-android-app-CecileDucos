@@ -7,13 +7,17 @@ Codé par :
 
 ## Description  
   
-URL des données : [URL]  
+URL des données : [https://data.opendatasoft.com/api/records/1.0/search/?dataset=fr-esr-principaux-etablissements-enseignement-superieur%40mesr]  
   
-[A completer]  
-  
-## Librairies externes  
-  
-[A completer]  
+Cette application regroupe les principaux établissements d'enseignement supérieur français et leurs caractéristiques.\n\n
+
+Pour chaque établissement, nous affichons au clic son nom, son adresse, son type et son site internet.\n\n
+
+Tous les établissements sont affichés sur une carte et nous pouvons également accéder au détail de chacun au clic sur le marker.\n\n
+
+Un bouton permet de rafraichir les données.
+
+Application réalisé dans le cadre d'un projet du cours Android de la formation ISMIN de l'Ecole des Mines de Saint Etienne par Cécile Ducos et Hossein Hashemi.\n\n   
   
 ## Consignes  
   
