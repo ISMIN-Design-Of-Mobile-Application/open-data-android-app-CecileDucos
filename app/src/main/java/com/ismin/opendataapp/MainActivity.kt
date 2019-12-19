@@ -14,6 +14,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
+
+
 class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListener, ListFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener {
 
     private val SERVER_BASE_URL = "https://data.opendatasoft.com/api/records/1.0/"
@@ -22,11 +24,6 @@ class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListe
 
     private val recordArray: ArrayList<Record> = arrayListOf()
     private val schoolList: ArrayList<School> = arrayListOf()
-
-    /*arrayListOf(School("Mines St-Etienne Cycle ISMIN", "Gardanne", "École Ingénieur", "https://www.mines-stetienne.fr/formation/ismin/",
-        "PACA", "879 route de Mimet",43.445038, 5.479467), School("emlyon business school", "Ecully",
-        "Université", "https://www.em-lyon.com/fr",
-        "Rhône-Alpes", "23 Avenue Guy de Collongue",45.786430, 4.764251))*/
 
     private lateinit var mainViewPager: ViewPager
     val fragmentList = ListFragment()
@@ -73,9 +70,6 @@ class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListe
         viewPager.adapter = sectionPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
-        //Initialisation des valeurs des fragments avec le tableau actuel
-        fragmentList.afficherList(schoolList)
-        fragmentMap.getSchool(schoolList)
     }
 
     //Création du menu avec l'option refresh
@@ -117,6 +111,7 @@ class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListe
 
                     fragmentList.afficherList(schoolList)
                     fragmentMap.getSchool(schoolList)
+                    fragmentMap.afficherMarkers()
                 }
 
                 override fun onFailure(call: Call<Server>, t: Throwable) {
@@ -134,6 +129,5 @@ class MainActivity : AppCompatActivity(), MapFragment.OnFragmentInteractionListe
         }
         println(schoolList)
     }
-
 
 }

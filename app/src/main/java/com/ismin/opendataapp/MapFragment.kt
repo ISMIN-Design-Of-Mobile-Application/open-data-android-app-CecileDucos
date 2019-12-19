@@ -23,6 +23,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
     private var listener: OnFragmentInteractionListener? = null
     private var schoolList: ArrayList<School> = ArrayList()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,6 +35,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         return inflater.inflate(R.layout.fragment_map, container, false)
     }
 
@@ -66,7 +68,15 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+    }
 
+
+    fun getSchool(listSchool: ArrayList<School>) {
+        this.schoolList.clear()
+        this.schoolList.addAll(listSchool)
+    }
+
+    fun afficherMarkers(){
         for (i in 0 until schoolList.size) {
 
             val school = schoolList[i]
@@ -84,12 +94,6 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
         mMap.setOnMarkerClickListener() {
             onMarkerClick(it)
         }
-    }
-
-
-    fun getSchool(listSchool: ArrayList<School>) {
-        this.schoolList.clear()
-        this.schoolList.addAll(listSchool)
 
     }
 
